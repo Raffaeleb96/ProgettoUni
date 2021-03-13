@@ -7,8 +7,6 @@
 <title>purchiacca</title>
 </head>
 <body>
-
 ciao
-
 </body>
 </html>
