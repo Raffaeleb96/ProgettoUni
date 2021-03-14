@@ -29,7 +29,7 @@
 <!-- NAVBAR  -->
 
 
-<nav class="navbar navbar-inverse bg-inverse navbar-light navbar-expand-lg sticky-top navbar-bgcolor">
+<nav class="navbar navbar-inverse bg-inverse navbar-light navbar-expand-lg sticky-top navbar-bgcolor ">
   <div class="container-fluid">
   
   
@@ -41,11 +41,11 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navbar-brand" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle navbar-brand active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Prodotti
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Mascherine</a></li>
+            <li ><a class="dropdown-item" href="#">Mascherine</a></li>
             <li><a class="dropdown-item" href="#">Igienizzanti</a></li>
           </ul>
         </li>
@@ -77,6 +77,7 @@
   <div class="carousel-inner carousel-height">
     <div class="carousel-item active">
       <img class="d-block w-100" src="imgs/banner1.jpg" alt="file non trovato">
+  </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="imgs/banner2.jpg" alt="file non trovato">
@@ -92,11 +93,11 @@
   
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+    
   </a>
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+   
   </a>
 </div>
 
