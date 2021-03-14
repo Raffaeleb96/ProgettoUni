@@ -21,9 +21,6 @@
 <title>Healthy4You</title>
 </head>
 
-
-
-
 <body>
 
 <!-- NAVBAR  -->
@@ -35,9 +32,7 @@
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  
+  </button>  
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
@@ -59,93 +54,5 @@
     </div>
   </div>
 </nav>
-
-
-
-
-<!-- CAROUSEL - SLIDESHOW -->
-
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  
-  
-  <div class="carousel-inner carousel-height">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="imgs/banner1.jpg" alt="file non trovato">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imgs/banner2.jpg" alt="file non trovato">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imgs/banner1.jpg" alt="file non trovato">
-    </div> 
-    <div class="carousel-item">
-      <img class="d-block w-100" src="imgs/banner2.jpg" alt="file non trovato">
-    </div>
-  </div>
-  
-  
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-   
-  </a>
-</div>
-
-
-
-<!-- PRODOTTI IN EVIDENZA -->
-
-
-<div class="container-fluid"><br>
-  <div class="textshow"> <h1> In evidenza </h1> </div>
- 
-  
-</div>
-
-
-
-
-
-
-<div class="container-fluid"><br>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  
-</div>
-
-
-
-
 </body>
 </html>
