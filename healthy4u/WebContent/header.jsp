@@ -143,9 +143,5 @@
   <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
   
 </div>
-
-
-
-
 </body>
 </html>
