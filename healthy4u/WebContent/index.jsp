@@ -11,12 +11,12 @@
   </ol>
   
   
-  <div class="carousel-inner carousel-height">
+  <div class="carousel-inner carousel-height" style="height:600px">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="imgs/razer-project-hazel-gallery-01.jpg" alt="file non trovato">
+      <img class="d-block w-100" src="imgs/razer banner1.jpg" alt="file non trovato">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="imgs/razer-project-hazel-gallery-04.jpg" alt="file non trovato">
+      <img class="d-block w-100" src="imgs/razerbanner2.png" alt="file non trovato" style=" width: 50%;  margin: auto;">
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="imgs/razer-project-hazel-gallery-06.png" alt="file non trovato">
