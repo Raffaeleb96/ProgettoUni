@@ -63,7 +63,6 @@
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>   
 			<!-- Wrapper for carousel items -->
 			<div class="carousel-inner">
@@ -299,12 +298,11 @@
 	<div class="row">
 		<div class="col-md-12">
 			
-			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="0">
 			<!-- Carousel indicators -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>   
 			<!-- Wrapper for carousel items -->
 			<div class="carousel-inner">
@@ -508,10 +506,10 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>				
 					
 			<!-- Carousel controls -->
-			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+			<a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
 				<i class="fa fa-angle-left carousel-control-prev-icon"></i>
 			</a>
-			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+			<a class="carousel-control-next" href="#myCarousel2" data-slide="next">
 				<i class="fa fa-angle-right carousel-control-next-icon"></i>
 			</a>
 		</div>
@@ -533,21 +531,6 @@
   <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
   <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  
 </div>
 </body>
 </html>
