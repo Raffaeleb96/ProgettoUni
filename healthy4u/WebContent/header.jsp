@@ -77,7 +77,6 @@
   <div class="carousel-inner carousel-height">
     <div class="carousel-item active">
       <img class="d-block w-100" src="imgs/banner1.jpg" alt="file non trovato">
-  </div>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="imgs/banner2.jpg" alt="file non trovato">
@@ -97,8 +96,9 @@
   </a>
   <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+   
   </a>
-
+</div>
 
 
 
@@ -143,5 +143,9 @@
   <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
   
 </div>
+
+
+
+
 </body>
 </html>
