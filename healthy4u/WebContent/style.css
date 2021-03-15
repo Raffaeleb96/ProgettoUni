@@ -47,7 +47,7 @@ h2::after {
 	padding: 0 70px;
 }
 .carousel .carousel-item {
-	min-height: 330px;
+	min-height: 450px;
 	text-align: center;
 	overflow: hidden;
 }
