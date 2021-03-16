@@ -1,5 +1,5 @@
 <jsp:include page="header.jsp" />
-<body>
+<body class="body">
 <!-- CAROUSEL - SLIDESHOW -->
 
 

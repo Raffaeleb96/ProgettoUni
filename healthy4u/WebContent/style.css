@@ -19,6 +19,10 @@
 
  /* CAROUSEL ITEMS  */
  
+ .body{
+ background-color: grey;
+ }
+ 
  h2 {
 	color: #000;
 	font-size: 26px;

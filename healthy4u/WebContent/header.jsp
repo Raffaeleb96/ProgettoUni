@@ -56,14 +56,22 @@ function myFunction() {
           <a class="nav-link" href="#">Chi siamo</a>
         </li>
       </ul>
+      
+      <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+        <li class="nav-item col-6 col-md-auto">
+          <a class="nav-link p-2" href="https://github.com/twbs" target="_blank" rel="noopener">
+            <i class="bi bi-person" style="font-size: 3.2rem;" onclick="myFunction()"></i>
+          </a>
+        </li>
+        <li class="nav-item col-6 col-md-auto">
+          <a class="nav-link p-2" href="https://twitter.com/getbootstrap" target="_blank" rel="noopener">
+            <i class="bi bi-bag" style="font-size: 2.7rem;" onclick="myFunxction()"></i>             
+          </a>
+        </li>	          
+      </ul>
+      
     </div>
-    <div>
-    <i class="bi bi-person" style="font-size: 3rem; margin-right:auto;" onclick="myFunction()"></i>
     </div>
- <div>
-    <i class="bi bi-bag" style="font-size: 2rem; position: relative;" onclick="myFunction()"></i>
- </div>
-  </div>
 </nav>
 </body>
 </html>
