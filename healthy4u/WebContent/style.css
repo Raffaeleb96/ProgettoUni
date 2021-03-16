@@ -1,3 +1,20 @@
+.custompad{
+	padding-bottom:100px;
+	padding-left:100px;
+	padding-right:100px;
+}
+
+.imgcustom{
+	width:100%;
+}
+
+.center {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  
+}
+
 
 .navbar-fontcolor{
 	color:black;
@@ -19,9 +36,7 @@
 
  /* CAROUSEL ITEMS  */
  
- .body{
- background-color: grey;
- }
+
  
  h2 {
 	color: #000;
@@ -173,3 +188,24 @@ h2::after {
 .carousel-control-prev /*, .carousel-indicators */ {
     filter: invert(100%);
 }
+
+
+
+
+
+
+
+
+
+
+.grid-container .row {
+	;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+

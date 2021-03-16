@@ -517,17 +517,166 @@
 
 
 
+<!-- Immagini con testo -->
+
+<div class="container-fluid" style="background-color: #F8F8F8"><br>
+
+
+
+<div class="py-12" style="background-color:#F8F8F8">
+	<div class="bounded-content">
+		<div class="grid-container">
+			<div class="row center">
+
+				<div class="col-md-6 mb-4 mb-md-0 custompad">
+					<h2 style="font-weight: 900">Vistaprint: a fianco delle piccole imprese dal 1995.</h2>
+						<div class="text-size-6 center"><p>Per più di  Vistaprint ha aiutato le piccole imprese a creare marketing
+ 											personalizzato dal design impeccabile. Il nostro sito web è pensato per aiutarti a trovare i prodotti di cui 
+ 												hai bisogno (biglietti da visita, articoli promozionali, ecc.) per creare lidentità visiva della tua attività.</p>
+ 						</div>
+					 </div>
+ 				<div class="col-md-6 mb-4 mb-md-0">
+
+			<img class="imgcustom" src="imgs/prova.jpg">
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
 <div class="container-fluid"><br>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-    <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
-  <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
+  
   <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
     <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
   <p>Some example text. Some example text. Some example text. Some example text. Some example text.</p>
 </div>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Iscriviti alla nostra newsletter!</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example2" class="form-control" />
+              
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+      le icone devono essere grandi 33x33
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-white">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-white">Link 2</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020/2021 Copyright:
+    <a class="text-white"">BRANCACCIO - APICELLA</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
 </body>
 </html>
