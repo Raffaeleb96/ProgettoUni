@@ -34,9 +34,17 @@
 }
 
 
+.zoom {
+  transition: transform .2s; /* Animation */
+  
+}
+
+.zoom:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
  /* CAROUSEL ITEMS  */
  
-
  
  h2 {
 	color: #000;
@@ -189,17 +197,7 @@ h2::after {
     filter: invert(100%);
 }
 
-
-
-
-
-
-
-
-
-
 .grid-container .row {
-	;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -208,4 +206,12 @@ h2::after {
     padding-left: 0;
 }
 
+.carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: 0.010s ease-in-out left;
+    -moz-transition: 0.010s ease-in-out left;
+    -o-transition: 0.010s ease-in-out left;
+    transition: 0.010s ease-in-out left;
+}
 
