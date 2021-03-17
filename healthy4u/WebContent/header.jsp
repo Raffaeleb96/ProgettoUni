@@ -57,7 +57,7 @@
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle navbar-brand active zoom" href="#"
 						id="navbarDropdownMenuLink" role="button"
-						data-bs-toggle="dropdown" aria-expanded="false"> Prodotti </a>
+						data-bs-toggle="dropdown" aria-expanded="false"> <b>Prodotti</b> </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<li><a class="dropdown-item zoom" href="#">Mascherine</a></li>
 							<li><a class="dropdown-item zoom" href="#">Igienizzanti</a></li>
@@ -67,8 +67,8 @@
 					<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="#">Chi
 							siamo</a></li>
 				</ul>
-				<ul class="navbar-nav row">
-				<li> <img alt="Logo" src="imgs/mask.svg " style="height: 100px; width: 100px;">
+				<ul class="navbar-brand mx-auto">
+				<li> <img alt="Logo" src="imgs/mask.svg" style="height: 100px; width: 100px;">
 				</ul>
 				
 				
