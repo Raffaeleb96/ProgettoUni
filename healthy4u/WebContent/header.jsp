@@ -45,14 +45,24 @@
 <body>
 	<!-- NAVBAR  -->
 	<nav
-		class="navbar navbar-inverse bg-inverse navbar-light navbar-expand-lg sticky-top navbar-bgcolor ">
+		class="navbar navbar-inverse bg-inverse navbar-light navbar-expand-lg sticky-top navbar-bgcolor">
 		<div class="container-fluid">
+		
+		
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 				aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+					
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			
+			<nav class="navbar navbar-light ">
+ 			 <a class="navbar-brand" href="#">
+  			  <img src="imgs/mask.svg" width="50px" height="50px" alt="">
+ 			 </a>
+		</nav>	
+			
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle navbar-brand active zoom" href="#"
@@ -66,25 +76,28 @@
 							all`acquisto</a></li>
 					<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="#">Chi
 							siamo</a></li>
+							
+							<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="#">+39 3338472395</a></li>
 				</ul>
-				<ul class="navbar-brand mx-auto">
-				<li> <img alt="Logo" src="imgs/mask.svg" style="height: 100px; width: 100px;">
-				</ul>
+				
+				
 				
 				
 				<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
 					<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 zoom" 
-						href="https://github.com/twbs" target="_blank" rel="noopener">
+						href="login.jsp" target="_blank" rel="noopener">
+								  Il tuo account &nbsp
 						<i class="bi bi-person-square"style="font-size: 2rem;"
 							onclick="myFunction()"></i>
 							
 					</a></li>
 					<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 zoom"
 						href="https://twitter.com/getbootstrap" target="_blank"
-						rel="noopener"> <i class="bi bi-bag"
+						rel="noopener"> Carrello <i class="bi bi-bag"
 							style="font-size: 2rem;" onclick="myFunxction()"></i>
 					</a></li>
 				</ul>
+				
 			</div>
 		</div>
 	</nav>

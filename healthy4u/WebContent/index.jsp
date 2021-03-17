@@ -1,5 +1,10 @@
 <jsp:include page="header.jsp" />
 <body class="body">
+
+	<div class="center" style= "background-color: #e0ffff">
+	<p class="center"> <h5><b>Il sito N°1 in Italia per l'acquisto di mascherine!</b></h5> </p>
+	</div>	
+
 	<!-- CAROUSEL - SLIDESHOW -->
 	<div id="demo" class="carousel slide carousel-fade"
 		data-ride="carousel" style="size: 150%">
@@ -10,28 +15,27 @@
 		</ul>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="imgs/razer banner1.jpg" alt="Los Angeles" width="1100"
+				<img src="imgs/123.jpg" alt="Los Angeles" width="1100"
 					height="500">
 				<div class="carousel-caption">
-					<h5>Razer Hazel</h5>
+					<h3><strong>Razer Hazel</strong></h3>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img src="imgs/razerbanner2.png" alt="Chicago" width="1100"
-					height="500">
+				<img src="imgs/456.jpg" alt="Chicago" width="1100" height="500">
 				<div class="carousel-caption">
-					<h5>Razer Hazel</h5>
+					<h3><strong>Razer Hazel</strong></h3>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="imgs/razer-project-hazel-gallery-01.jpg" alt="New York"
 					width="1100" height="500">
 				<div class="carousel-caption">
-					<h5>Razer Hazel</h5>
+					<h3><strong>Razer Hazel</strong></h3>
 				</div>
 			</div>
 		</div>
-		<a class="carousel-control-next" data-slide="next"> </a>
+		
 	</div>
 
 
@@ -543,14 +547,14 @@
 
 					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
 						role="button" data-slide="next"> <span
-						class="carousel-control-next-icon" aria-hidden="true"></span> <!-- Carousel controls -->
+						class="carousel-control-next-icon" aria-hidden="true"></span></a> <!-- Carousel controls -->
 						<a class="carousel-control-prev" href="#myCarousel2"
 						data-slide="prev"> <i
 							class="fa fa-angle-left carousel-control-prev-icon"></i>
 					</a> <a class="carousel-control-next" href="#myCarousel2"
-						data-slide="next"> <i
-							class="fa fa-angle-right carousel-control-next-icon"></i>
+						data-slide="next"> <i class="fa fa-angle-right carousel-control-next-icon"></i>
 					</a>
+					
 				</div>
 			</div>
 		</div>
@@ -561,7 +565,7 @@
 
 	<!-- Immagini con testo -->
 
-	<div class="container-fluid" style="background-color: #F8F8F8">
+	<div class="container-fluid" style="background-color: #F8F8F8; padding-bottom: 20px;">
 		<br>
 
 
@@ -593,26 +597,8 @@
 	</div>
 
 
-
-
-
-
-
-
-
-	<div class="container-fluid">
-		<br>
-
-		<p>Some example text. Some example text. Some example text. Some
-			example text. Some example text.</p>
-		<p>Some example text. Some example text. Some example text. Some
-			example text. Some example text.</p>
-		<p>Some example text. Some example text. Some example text. Some
-			example text. Some example text.</p>
-	</div>
-
 	<!-- Footer -->
-	<footer class="bg-dark text-center text-white">
+	<footer class=" text-center text-white" style="background-color: #6397d0">
 		<!-- Grid container -->
 		<div class="container p-4">
 		
@@ -650,7 +636,7 @@
 						<!--Grid column-->
 						<div class="col-auto">
 							<p class="pt-2">
-								<strong>Iscriviti alla nostra newsletter!</strong>
+								<strong>Iscriviti alla nostra newsletter</strong>
 							</p>
 						</div>
 						<!--Grid column-->
@@ -669,7 +655,7 @@
 						<div class="col-auto">
 							<!-- Submit button -->
 							<button type="submit" class="btn btn-outline-light mb-4">
-								Subscribe</button>
+								Iscriviti</button>
 						</div>
 						<!--Grid column-->
 					</div>
@@ -751,7 +737,7 @@
 		<!-- Copyright -->
 		<div class="text-center p-3"
 			style="background-color: rgba(0, 0, 0, 0.2);">
-			© 2020/2021 Copyright: <a class="text-white"">BRANCACCIO -
+			© 2020/2021 Copyright: <a class="text-white">BRANCACCIO -
 				APICELLA</a>
 		</div>
 		<!-- Copyright -->
