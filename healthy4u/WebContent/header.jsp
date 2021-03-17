@@ -58,8 +58,8 @@
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			
 			<nav class="navbar navbar-light ">
- 			 <a class="navbar-brand" href="#">
-  			  <img src="imgs/mask.svg" width="50px" height="50px" alt="">
+ 			 <a class="navbar-brand zoom" href="index.jsp">
+  			  <img src="imgs/mask.svg" width="50px" height="50px" alt="logo" >
  			 </a>
 		</nav>	
 			
