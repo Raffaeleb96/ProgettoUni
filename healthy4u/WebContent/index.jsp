@@ -1,4 +1,9 @@
+
+
+
 <jsp:include page="header.jsp" />
+
+
 <body class="body">
 
 	<div class="center" style= "background-color: #e0ffff">
@@ -73,7 +78,7 @@
 										<div class="thumb-content">
 											<h4>Apple iPad</h4>
 											<p class="item-price">
-												<strike>$400.00</strike> <span>$369.00</span>
+												<del>$400.00</del> <span>$369.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -96,7 +101,7 @@
 										<div class="thumb-content">
 											<h4>Sony Headphone</h4>
 											<p class="item-price">
-												<strike>$25.00</strike> <span>$23.99</span>
+												<del>$25.00</del> <span>$23.99</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -119,7 +124,7 @@
 										<div class="thumb-content">
 											<h4>Macbook Air</h4>
 											<p class="item-price">
-												<strike>$899.00</strike> <span>$649.00</span>
+												<del>$899.00</del> <span>$649.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -143,7 +148,7 @@
 										<div class="thumb-content">
 											<h4>Nikon DSLR</h4>
 											<p class="item-price">
-												<strike>$315.00</strike> <span>$250.00</span>
+												<del>$315.00</del> <span>$250.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -170,7 +175,7 @@
 										<div class="thumb-content">
 											<h4>Sony Play Station</h4>
 											<p class="item-price">
-												<strike>$289.00</strike> <span>$269.00</span>
+												<del>$289.00</del> <span>$269.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -193,7 +198,7 @@
 										<div class="thumb-content">
 											<h4>Macbook Pro</h4>
 											<p class="item-price">
-												<strike>$1099.00</strike> <span>$869.00</span>
+												<del>$1099.00</del> <span>$869.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -217,7 +222,7 @@
 										<div class="thumb-content">
 											<h4>Bose Speaker</h4>
 											<p class="item-price">
-												<strike>$109.00</strike> <span>$99.00</span>
+												<del>$109.00</del> <span>$99.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -240,7 +245,7 @@
 										<div class="thumb-content">
 											<h4>Samsung Galaxy S8</h4>
 											<p class="item-price">
-												<strike>$599.00</strike> <span>$569.00</span>
+												<del>$599.00</del> <span>$569.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -340,7 +345,7 @@
 										<div class="thumb-content">
 											<h4>Apple iPad</h4>
 											<p class="item-price">
-												<strike>$400.00</strike> <span>$369.00</span>
+												<del>$400.00</del>> <span>$369.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -363,7 +368,7 @@
 										<div class="thumb-content">
 											<h4>Sony Headphone</h4>
 											<p class="item-price">
-												<strike>$25.00</strike> <span>$23.99</span>
+												<del>$25.00</del> <span>$23.99</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -386,7 +391,7 @@
 										<div class="thumb-content">
 											<h4>Macbook Air</h4>
 											<p class="item-price">
-												<strike>$899.00</strike> <span>$649.00</span>
+												<del>$899.00</del> <span>$649.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -410,7 +415,7 @@
 										<div class="thumb-content">
 											<h4>Nikon DSLR</h4>
 											<p class="item-price">
-												<strike>$315.00</strike> <span>$250.00</span>
+												<del>$315.00</del> <span>$250.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -437,7 +442,7 @@
 										<div class="thumb-content">
 											<h4>Sony Play Station</h4>
 											<p class="item-price">
-												<strike>$289.00</strike> <span>$269.00</span>
+												<del>$289.00</del> <span>$269.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -460,7 +465,7 @@
 										<div class="thumb-content">
 											<h4>Macbook Pro</h4>
 											<p class="item-price">
-												<strike>$1099.00</strike> <span>$869.00</span>
+												<del>$1099.00</del> <span>$869.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -484,7 +489,7 @@
 										<div class="thumb-content">
 											<h4>Bose Speaker</h4>
 											<p class="item-price">
-												<strike>$109.00</strike> <span>$99.00</span>
+												<del>$109.00</del> <span>$99.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
@@ -507,7 +512,7 @@
 										<div class="thumb-content">
 											<h4>Samsung Galaxy S8</h4>
 											<p class="item-price">
-												<strike>$599.00</strike> <span>$569.00</span>
+												<del>$599.00</del> <span>$569.00</span>
 											</p>
 											<div class="star-rating">
 												<ul class="list-inline">
