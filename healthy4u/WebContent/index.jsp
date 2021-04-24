@@ -1,13 +1,28 @@
 
 
-
+<!-- FILE COPIATI DA PRODUCTVIEW.JSP DELLA PROF - LISTA ELEMENTI DB -->
 <jsp:include page="header.jsp" />
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%
+	Collection<?> products = (Collection<?>) request.getAttribute("products");
+	if(products == null) {
+		response.sendRedirect("./product");	
+		return;
+	}
+	ProductBean product = (ProductBean) request.getAttribute("product");
+%>
+
+
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.unisa.ProductBean"%>
+
 
 
 <body class="body">
 
 	<div class="center" style= "background-color: #e0ffff">
-	<p class="center"> <h5><b>Il sito N°1 in Italia per l'acquisto di mascherine!</b></h5> </p>
+	<p class="center"> <h5><b>Il sito NÂ°1 in Italia per l'acquisto di mascherine!</b></h5> </p>
 	</div>	
 
 	<!-- CAROUSEL - SLIDESHOW -->
@@ -49,7 +64,7 @@
 		<br>
 		<div class="textshow">
 			<h1>
-				Più <b>acquistati</b>
+				PiÃ¹ <b>acquistati</b>
 			</h1>
 		</div>
 	</div>
@@ -583,11 +598,11 @@
 						<div class="col-md-6 mb-4 mb-md-0 custompad">
 							<h2 style="font-weight: 900">Healthy4You</h2>
 							<div class="text-size-6 center">
-								<p>Per più di Vistaprint ha aiutato le piccole imprese a
+								<p>Per piÃ¹ di Vistaprint ha aiutato le piccole imprese a
 									creare marketing personalizzato dal design impeccabile. Il
-									nostro sito web è pensato per aiutarti a trovare i prodotti di
+									nostro sito web Ã¨ pensato per aiutarti a trovare i prodotti di
 									cui hai bisogno (biglietti da visita, articoli promozionali,
-									ecc.) per creare lidentità visiva della tua attività.</p>
+									ecc.) per creare lidentitÃ  visiva della tua attivitÃ .</p>
 							</div>
 						</div>
 						<div class="col-md-6 mb-4 mb-md-0">
@@ -742,7 +757,7 @@
 		<!-- Copyright -->
 		<div class="text-center p-3"
 			style="background-color: rgba(0, 0, 0, 0.2);">
-			© 2020/2021 Copyright: <a class="text-white">BRANCACCIO -
+			Â© 2020/2021 Copyright: <a class="text-white">BRANCACCIO -
 				APICELLA</a>
 		</div>
 		<!-- Copyright -->
