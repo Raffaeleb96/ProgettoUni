@@ -1,0 +1,18 @@
+footer{
+	background: #1F0553;
+	color: #f9f9f9;
+	padding: 10px 0;
+}
+
+	footer p{
+		text-align: center;
+	}
+	
+		footer a{
+			color: #f9f9f9;
+			text-decoration: none;
+		}
+		
+		footer a:hover{
+				color: var(--coloredue);
+			}
