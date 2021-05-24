@@ -39,7 +39,24 @@
 	<!-- container: lavoro nella parte centrale della pagina --> 
 		<div class="container"> 
 		
-			QUESTO E' L'HEADER
+			<div class="row">
+				
+				<!-- la pagina deve essere larga 12 -->
+				<div class="col-md-3">
+				
+					<a href="index.jsp">
+						<img src="imgs/mask.svg" title="hi" alt="hi">
+					</a>
+					
+				</div>		
+				
+				<div class="col-md-9">
+					<jsp:include page="menu.jsp"></jsp:include>
+				</div>
+			
+			
+			</div>
+	
 	
 		</div>
 	

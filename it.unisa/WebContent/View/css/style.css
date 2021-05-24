@@ -1,3 +1,124 @@
+/* importo font da google */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+
+/*
+	dichiaro, tramite "variabili" i codici dei colori di mio 
+	interesse in modo che possano essere sempre utilizzabili 
+	facilmente e cambiati in pochi click.
+	
+	allo stesso modo potrei dichiarare altri valori, per es.
+	font utilizzati spesso o altro...
+	
+*/
+
+:root{
+	--coloreuno: #3A1488; 	/* blu */
+	--coloredue: #9ABF09; 	/* verde */
+	--coloretre: #EEEEEE; 	/* grigio */
+	--font: 'Krona One', sans-serif;
+}
+
+/* azzero tutte le spaziature e i bordi di default del documento */ 
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* 
+	definisco che le immagini occuperanno tutto lo spazio
+	relativo all'elemento che lo contiene
+*/
+img{ width: 100%; }
+
+/* ----------------------------------------------------------------------- */
+
+/*
+	le regole di stile sono contenute dentro le graffe
+	
+	regole nomenclatura:
+	
+		> 	senza delimitatori quando riferite ad elementi standard
+			del linguaggio (es. html, body, h1...)
+			
+		>	cominciano con . quando le associamo a più elementi nel
+			documento 
+			--> nell'html avrò class = "nome-regole-css"
+			
+		>	cominciano con # quando le associamo ad un unico elemento 
+			nel documento 
+			--> nell'html avrò id = "nome-regole-css" 
+*/
+
+body{ background: #f8f8f8; font-family: Arial; }
+
+h1, h2, h3, h4, h5, h6{ font-family: var(--font); }
+
+/* -------------------------------------------------------------------- */
+
+header{
+	background: #fff; /* ffffff */	
+	/* spaziatura interna: 20px alto e basso, 0 destra e sinistra */
+	padding: 20px 0; 
+}
+
+
+
+/* -------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------- */
+
+#menutop{
+	/* aggancio elementi a destra */
+	float: right;
+	margin-top: 30px;
+}
+
+	#menutop ul{
+		/* tolgo i pallini dell'elenco */
+		list-style: none;
+		float: left;
+	}
+	
+		#menutop ul li{
+			padding: 14px 15px; /* sopra-sotto destra-sinistra */
+			font-size: 25px;
+			float: left;
+		}
+
+			#menutop ul li a{
+				/* tolgo sottolineatura link */
+				text-decoration: none;
+				font-family: var(--font);
+				color: var(--coloreuno);
+			}
+
+				#menutop ul li a:hover{
+					color: var(--coloredue);
+				}
+
+/* ------------------------------------------------------------------- */
+
+#social, .azioni{
+	float: right;
+	margin-top: 14px;
+}
+
+	#social, .azioni a{
+		color: var(--coloredue);
+		margin-left: 10px;
+		font-size: 25px;
+		text-decoration: none;
+	}
+	
+		#social, .azioni a:hover{
+			color: var(--coloreuno);
+		}
+
+/* ------------------------------------------------------------------- */
+
 footer{
 	background: #1F0553;
 	color: #f9f9f9;
@@ -13,6 +134,203 @@ footer{
 			text-decoration: none;
 		}
 		
-		footer a:hover{
+			footer a:hover{
 				color: var(--coloredue);
 			}
+	
+/* ------------------------------------------------------------------- */
+
+.coloreuno{
+	background: var(--coloreuno);
+	background: rgb(58,20,136);
+background: linear-gradient(281deg, rgba(58,20,136,1) 42%, rgba(17,12,54,1) 100%);
+}		
+
+.boxuno{
+	padding: 110px 0px;	
+	color: #f9f9f9; 
+	font-size: 25px;
+}
+
+	.boxuno p{
+		margin-bottom: 55px;
+	}
+	
+.bottoneuno{
+	background: var(--coloredue);
+	padding: 10px 15px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+	.bottoneuno a{
+		color: #f9f9f9;
+		text-decoration: none;
+	}
+
+	.bottoneuno:hover{
+		background: #f9f9f9;
+	}
+		
+		.bottoneuno:hover a{
+			color: var(--coloredue);
+		}
+
+/* ---------------------------------------------------------------------------- */
+
+.musthave{
+	padding: 50px 0;
+}
+
+.musthave h1{
+	color: var(--coloredue);
+}
+
+.bottonedue{
+	background: var(--coloreuno);
+	padding: 10px 15px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+	.bottonedue a{
+		color: #f9f9f9;
+		text-decoration: none;
+	}
+
+	.bottonedue:hover{
+		background: var(--coloredue);
+	}
+		
+		.bottonedue:hover a{
+			color: var(--coloreuno);
+		}
+
+
+.musthave .box{
+	
+	border: 2px solid #f8f8f8;
+	text-align: center;
+	
+	margin-top: 30px;
+	padding: 50px;
+	
+	border-radius: 10px;
+		
+}
+
+.musthave .box:hover{
+	
+	border: 2px solid var(--coloreuno);
+	text-align: center;
+	
+}	
+
+	.musthave .box:hover .bottonedue{
+		background: var(--coloredue);
+	}
+
+/* ------------------------------------------------------------------------------ */
+	
+	.boxgrigio{
+		background: var(--coloretre);
+		
+		padding: 50px 0;
+	}
+	
+	.boxgrigio h1{
+		color: var(--coloreuno);
+		margin-bottom: 50px;
+	}
+	
+/* ------------------------------------------------------------------------------ */
+
+.prodotti{
+	
+	padding: 70px 0;
+	
+}	
+
+	.prodotti h1{
+		color: var(--coloreuno);
+		padding: 40px 0 60px 0;
+	}
+	
+		.prodotti h1 span, .prodotti h2 span{
+			color: var(--coloredue);
+		}
+	
+	.prodotti h2{
+		color: var(--coloreuno);
+	}
+	
+	
+	.prodotti .boxgrigio{
+		margin-bottom: 25px;
+	}
+	
+	.prodotti p{
+		font-size: 20px;
+		padding: 30px 0;
+	}
+	
+	.prodotti .bottonedue{
+		font-size: 1.5rem;
+		float: right;
+	}
+	
+	.prodotti img{
+		margin-bottom: 25px;
+	}
+	
+/* ------------------------------------------------------------------------------ */
+	
+	.titolo{ text-align: center; color: #f9f9f9; padding: 30px 0 }
+	
+/* ------------------------------------------------------------------------------ */
+	
+	.sezione{
+		padding-top: 70px; 
+	}	
+
+	.sezione h2{
+			color: var(--coloredue);
+		}
+	
+	.sezione p{
+		font-size: 20px;
+		padding: 30px 0;
+	}
+	
+/* -------------------------------------------------------------------------- */
+
+form{ margin-bottom: 30px; }
+
+input, select{
+	width: 100%;
+	padding: 10px;
+	border: 2px solid var(--coloreuno);
+	margin-top: 10px;
+}	
+
+	input[type="submit"]{
+		background: var(--coloreuno);
+		color: #f8f8f8;
+	}
+	
+		input[type="submit"]:hover{
+			background: var(--coloredue);
+				border: 2px solid var(--coloredue);			
+		}
+	
+textarea{
+	width: 100%;
+	min-height: 100px;
+	padding: 10px;
+	border: 2px solid var(--coloreuno);
+	margin-top: 10px;
+}	
+
+.categorie a{
+	text-transform: uppercase;
+}		
