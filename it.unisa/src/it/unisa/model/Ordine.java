@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Ordine {
 	
-	private int id;
+	private int id, id_utente;
 	
 	private String stato, indirizzoSpedizione;
 	private Date data;
@@ -14,22 +14,32 @@ public class Ordine {
 		super();
 	}
 
-	public Ordine(int id, String stato, String indirizzoSpedizione, Date data, double importoTotale) {
+
+	public Ordine(int id_utente, String stato, String indirizzoSpedizione, Date data, double importoTotale) {
 		super();
-		this.id = id;
+		this.id_utente = id_utente;
 		this.stato = stato;
 		this.indirizzoSpedizione = indirizzoSpedizione;
 		this.data = data;
 		this.importoTotale = importoTotale;
 	}
 
-	public Ordine(String stato, String indirizzoSpedizione, Date data, double importoTotale) {
+
+
+	public Ordine(int id, int id_utente, String stato, String indirizzoSpedizione, Date data, double importoTotale) {
 		super();
+		this.id = id;
+		this.id_utente = id_utente;
 		this.stato = stato;
 		this.indirizzoSpedizione = indirizzoSpedizione;
 		this.data = data;
 		this.importoTotale = importoTotale;
 	}
+
+
+
+
+
 
 	public int getId() {
 		return id;
@@ -71,11 +81,34 @@ public class Ordine {
 		this.importoTotale = importoTotale;
 	}
 
+
+	public int getId_utente() {
+		return id_utente;
+	}
+
+
+	public void setId_utente(int id_utente) {
+		this.id_utente = id_utente;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Ordine [id=" + id + ", stato=" + stato + ", indirizzoSpedizione=" + indirizzoSpedizione + ", data="
-				+ data + ", importoTotale=" + importoTotale + "]";
+		return "Ordine [id=" + id + ", id_utente=" + id_utente + ", stato=" + stato + ", indirizzoSpedizione="
+				+ indirizzoSpedizione + ", data=" + data + ", importoTotale=" + importoTotale + "]";
 	}
+
+
+
+
+
+
+
+
+	
+	
+
+	
 	
 	
 	

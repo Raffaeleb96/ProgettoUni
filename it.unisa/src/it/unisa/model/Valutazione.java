@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Valutazione {
 	
-	private int id, score;
+	private int id, id_utente, id_prodotto, score;
 	
 	private Date dataValutazione;
 	
@@ -14,20 +14,30 @@ public class Valutazione {
 		super();
 	}
 
-	public Valutazione(int id, int score, Date dataValutazione, String descrizione) {
+	
+
+	public Valutazione(int id, int id_utente, int id_prodotto, int score, Date dataValutazione, String descrizione) {
 		super();
 		this.id = id;
+		this.id_utente = id_utente;
+		this.id_prodotto = id_prodotto;
 		this.score = score;
 		this.dataValutazione = dataValutazione;
 		this.descrizione = descrizione;
 	}
 
-	public Valutazione(int score, Date dataValutazione, String descrizione) {
+	
+
+	public Valutazione(int id_utente, int id_prodotto, int score, Date dataValutazione, String descrizione) {
 		super();
+		this.id_utente = id_utente;
+		this.id_prodotto = id_prodotto;
 		this.score = score;
 		this.dataValutazione = dataValutazione;
 		this.descrizione = descrizione;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -61,11 +71,15 @@ public class Valutazione {
 		this.descrizione = descrizione;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "Valutazione [id=" + id + ", score=" + score + ", dataValutazione=" + dataValutazione + ", descrizione="
-				+ descrizione + "]";
+		return "Valutazione [id=" + id + ", id_utente=" + id_utente + ", id_prodotto=" + id_prodotto + ", score="
+				+ score + ", dataValutazione=" + dataValutazione + ", descrizione=" + descrizione + "]";
 	}
+
+	
 
 	
 	

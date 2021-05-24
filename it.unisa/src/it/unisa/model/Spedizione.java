@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Spedizione {
 	
-	private int id;
+	private int id, id_ordine;
 	
 	private Date dataInvio, dataRicezione;
 	
@@ -14,20 +14,26 @@ public class Spedizione {
 		
 	}
 
-	public Spedizione(int id, Date dataInvio, Date dataRicezione, String tracking) {
+	public Spedizione(int id_ordine, Date dataInvio, Date dataRicezione, String tracking) {
 		super();
-		this.id = id;
+		this.id_ordine = id_ordine;
 		this.dataInvio = dataInvio;
 		this.dataRicezione = dataRicezione;
 		this.tracking = tracking;
 	}
 
-	public Spedizione(Date dataInvio, Date dataRicezione, String tracking) {
+	
+
+	public Spedizione(int id, int id_ordine, Date dataInvio, Date dataRicezione, String tracking) {
 		super();
+		this.id = id;
+		this.id_ordine = id_ordine;
 		this.dataInvio = dataInvio;
 		this.dataRicezione = dataRicezione;
 		this.tracking = tracking;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -61,11 +67,21 @@ public class Spedizione {
 		this.tracking = tracking;
 	}
 
+	public int getId_ordine() {
+		return id_ordine;
+	}
+
+	public void setId_ordine(int id_ordine) {
+		this.id_ordine = id_ordine;
+	}
+
 	@Override
 	public String toString() {
-		return "Spedizione [id=" + id + ", dataInvio=" + dataInvio + ", dataRicezione=" + dataRicezione + ", tracking="
-				+ tracking + "]";
+		return "Spedizione [id=" + id + ", id_ordine=" + id_ordine + ", dataInvio=" + dataInvio + ", dataRicezione="
+				+ dataRicezione + ", tracking=" + tracking + "]";
 	}
+
+	
 	
 	
 
