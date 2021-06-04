@@ -1,5 +1,5 @@
 /* importo font da google */
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 
 /*
@@ -16,7 +16,7 @@
 	--coloreuno: #3A1488; 	/* blu */
 	--coloredue: #9ABF09; 	/* verde */
 	--coloretre: #EEEEEE; 	/* grigio */
-	--font: 'Krona One', sans-serif;
+	--font: 'Indie Flower', sans-serif;
 }
 
 /* azzero tutte le spaziature e i bordi di default del documento */ 
@@ -25,6 +25,8 @@
 	padding: 0;
 	border: 0;
 }
+
+
 
 /* 
 	definisco che le immagini occuperanno tutto lo spazio
@@ -165,4 +167,17 @@ footer{
 			}
 	
 /* ------------------------------------------------------------------- */
+
+/* altezza del carousel nella index */
+.w-100 {
+    height: 500px;
+}
+
+/* ------------------------------------------------------------------- */
+/* immagini dei prodotti nella scheda prodotti.jsp  */
+
+.imgsize{
+	height:200px;
+	width:200px;	
+}
 

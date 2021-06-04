@@ -7,15 +7,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import it.unisa.model.Utente;
+import it.unisa.model.Prodotto;
 
 
-public class UtenteDAO {
+public class ProdottoDAO {
 	
 	private Statement st;
 	private PreparedStatement ps;
 	
-	public UtenteDAO() throws ClassNotFoundException {
+	public ProdottoDAO() throws ClassNotFoundException {
 		
 		//recuperiamo la connessione al db
 		
@@ -54,10 +54,10 @@ public class UtenteDAO {
 	
 	
 //TODO
-	public boolean inserisci(Utente s) throws ClassNotFoundException {
+	public boolean inserisci(Prodotto s) throws ClassNotFoundException {
 		
 	//controllo he i valori non siano vuoti TODO	
-	String sql = "INSERT INTO utente (nome,cognome) VALUES (?,?,?)";	
+	String sql = "INSERT INTO prodotto (nome,cognome) VALUES (?,?,?)";	
 	//mi dichiaro la variabile String con la query
 		
 	try {
@@ -65,7 +65,7 @@ public class UtenteDAO {
 	
 	//i segnaposto partono da uno
 	ps.setString(1, s.getNome());
-	ps.setString(2, s.getCognome());
+	
 	
 		/*
 		 * uso executeQuery quando devo fare una select, executeUpdate quando ho una query con i ?(segnaposto), e execute quando devo eeseguire una insert into completa
@@ -89,19 +89,19 @@ public class UtenteDAO {
 	
 	
 //	TODO
-	public boolean modifica(Utente s) throws ClassNotFoundException {
+	public boolean modifica(Prodotto s) throws ClassNotFoundException {
 		
 		//UPDATE tabella SET colonna = val, colonna = val;
 		
 		//mi dichiaro la stringa sql con la query
-		String sql = "UPDATE utente SET nome = ?, cognome = ?, classe = ? WHERE id = ?";
+		String sql = "UPDATE Prodotto SET nome = ?, cognome = ?, classe = ? WHERE id = ?";
 		
 		try {
 			
 			ps = ConnessioneDB.getConnessione().prepareStatement(sql);
 			
 			ps.setString(1, s.getNome());
-			ps.setString(2, s.getCognome());
+		
 			ps.setInt(4, s.getId());
 			
 			//i segnaposto partono da uno
@@ -129,7 +129,7 @@ public class UtenteDAO {
 		//UPDATE tabella SET colonna = val, colonna = val;
 		
 				//mi dichiaro la stringa sql con la query
-				String sql = "DELETE FROM utente WHERE id = "+id;
+				String sql = "DELETE FROM prodotto WHERE id = "+id;
 		
 				
 				try {
@@ -146,7 +146,7 @@ public class UtenteDAO {
 	
 //	public boolean cancellaTutti() {
 //		
-//		String sql = "DELETE FROM utente";
+//		String sql = "DELETE FROM Prodotto";
 //		
 //		
 //		try {
@@ -162,14 +162,12 @@ public class UtenteDAO {
 //		
 //	}
 	
-	
-	
-public Utente recuperaUno(String email) {
+	public Prodotto recuperaUno(int id) {
 		
 		//dichiaro stringa di query
 		
-		String sql = "SELECT * FROM utente WHERE email='"+email+"'";
-		Utente s = new Utente();
+		String sql = "SELECT * FROM prodotto WHERE id="+id;
+		Prodotto s = new Prodotto();
 		
 		
 		
@@ -182,62 +180,22 @@ public Utente recuperaUno(String email) {
 			 					// posso anche chiamare un while su next, in base alla query dichiarata 
 			 					// tornerà un solo risultato
 			 
-			 				s = new Utente( 
+			 				s = new Prodotto( 
 									rs.getInt("id"),
 									rs.getString("nome"),
-									rs.getString("cognome"),
-									rs.getString("indirizzo"),
-									rs.getString("email"),
-									rs.getString("password"),
-									rs.getString("cellulare"),
-									rs.getString("tipo")
+									rs.getString("categoria"),
+									rs.getInt("quantita"),
+									rs.getString("descrizione"),
+									rs.getDouble("prezzo"),
+									rs.getString("foto")
+									
 											);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		//ritorno l'oggetto di tipo Utente prelevato dal database tramite query
-		
-		return s;
-
-	}
-	
-	
-	public Utente recuperaUno(int id) {
-		
-		//dichiaro stringa di query
-		
-		String sql = "SELECT * FROM utente WHERE id="+id;
-		Utente s = new Utente();
-		
-		
-		
-		//recupero la riga dal database
-
-		try {
-			ResultSet rs = st.executeQuery(sql);				//EXECUTE QUERY SI UTILIZZA PER PRELEVARE DA MYSQL
-			
-			 rs.next();			// chiamo next una sola volta perchè voglio un solo risultato	
-			 					// posso anche chiamare un while su next, in base alla query dichiarata 
-			 					// tornerà un solo risultato
-			 
-			 				s = new Utente( 
-									rs.getInt("id"),
-									rs.getString("nome"),
-									rs.getString("cognome"),
-									rs.getString("indirizzo"),
-									rs.getString("email"),
-									rs.getString("password"),
-									rs.getString("cellulare"),
-									rs.getString("tipo")
-											);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
-		//ritorno l'oggetto di tipo Utente prelevato dal database tramite query
+		//ritorno l'oggetto di tipo Prodotto prelevato dal database tramite query
 		
 		return s;
 
@@ -279,11 +237,11 @@ public Utente recuperaUno(String email) {
 	 * (la numerazione parte da 1)
 	 * 
 	 */
-	public ArrayList<Utente> recuperaTutti() {
+	public ArrayList<Prodotto> recuperaTutti() {
 		
 		//dichiaro la stringa query
-		String sql ="SELECT * FROM utente";
-		ArrayList<Utente> elenco = new ArrayList<Utente>();
+		String sql ="SELECT * FROM prodotto";
+		ArrayList<Prodotto> elenco = new ArrayList<Prodotto>();
 		
 		//eseguo la query e salvo il risultato
 		try {
@@ -295,20 +253,20 @@ public Utente recuperaUno(String email) {
 			/*mentre ci sono righe
 			 * ne estrapolo una alla volta (avviene in automatico)
 			 * processo la singola riga
-			 * salvo oggetto Utente nell'array
+			 * salvo oggetto Prodotto nell'array
 			 */
 			
 			while(rs.next()) {
 				
-				elenco.add(		new Utente( 
-									rs.getInt("id"),
-									rs.getString("nome"),
-									rs.getString("cognome"),
-									rs.getString("indirizzo"),
-									rs.getString("email"),
-									rs.getString("password"),
-									rs.getString("cellulare"),
-									rs.getString("tipo")
+				elenco.add(		new Prodotto( 
+						rs.getInt("id"),
+						rs.getString("nome"),
+						rs.getString("categoria"),
+						rs.getInt("quantita"),
+						rs.getString("descrizione"),
+						rs.getDouble("prezzo"),
+						rs.getString("foto")
+						
 											)
 							);
 				
@@ -325,5 +283,50 @@ public Utente recuperaUno(String email) {
 
 	
 	
+	
+//	recupera un elenco di prodotti dati dalla categoria tra parentesi passata come parametro al metodo
+	
+public ArrayList<Prodotto> recuperaTutti(String categoria) {
+		
+		//dichiaro la stringa query
+		String sql ="SELECT * FROM prodotto where categoria='"+categoria+"'";
+		ArrayList<Prodotto> elenco = new ArrayList<Prodotto>();
+		
+		//eseguo la query e salvo il risultato
+		try {
+			ResultSet rs = st.executeQuery(sql);
+			
+			
+			//processo il risultato
+			
+			/*mentre ci sono righe
+			 * ne estrapolo una alla volta (avviene in automatico)
+			 * processo la singola riga
+			 * salvo oggetto Prodotto nell'array
+			 */
+			
+			while(rs.next()) {
+				
+				elenco.add(		new Prodotto( 
+						rs.getInt("id"),
+						rs.getString("nome"),
+						rs.getString("categoria"),
+						rs.getInt("quantita"),
+						rs.getString("descrizione"),
+						rs.getDouble("prezzo"),
+						rs.getString("foto")
+											)
+							);
+				
+							}
+			
+
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+		
+		
+		return elenco;
+	}
 
 }

@@ -105,9 +105,12 @@ public class Utente {
 
 		@Override
 		public String toString() {
-			return "Ordine [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", indirizzo=" + indirizzo
+			return "Utente [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", indirizzo=" + indirizzo
 					+ ", email=" + email + ", password=" + password + ", cellulare=" + cellulare + ", tipo=" + tipo
 					+ "]";
 		}
+
+		
+	
 		
 }

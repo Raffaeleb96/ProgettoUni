@@ -2,15 +2,15 @@ package it.unisa.model;
 
 public class Prodotto {
 	
-	private int id;
-	private String nome, categoria, quantita, descrizione;
+	private int id, quantita;
+	private String nome, categoria, descrizione,foto;
 	private double prezzo;
 	
 	public Prodotto() {
 		super();
 	}
 
-	public Prodotto(int id, String nome, String categoria, String quantita, String descrizione, double prezzo) {
+	public Prodotto(int id, String nome, String categoria, int quantita, String descrizione, double prezzo, String foto) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -18,15 +18,17 @@ public class Prodotto {
 		this.quantita = quantita;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
+		this.foto=foto;
 	}
 
-	public Prodotto(String nome, String categoria, String quantita, String descrizione, double prezzo) {
+	public Prodotto(String nome, String categoria, int quantita, String descrizione, double prezzo,String foto) {
 		super();
 		this.nome = nome;
 		this.categoria = categoria;
 		this.quantita = quantita;
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
+		this.foto=foto;
 	}
 
 	public int getId() {
@@ -53,11 +55,11 @@ public class Prodotto {
 		this.categoria = categoria;
 	}
 
-	public String getQuantita() {
+	public int getQuantita() {
 		return quantita;
 	}
 
-	public void setQuantita(String quantita) {
+	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
 
@@ -77,11 +79,23 @@ public class Prodotto {
 		this.prezzo = prezzo;
 	}
 
+	
+	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 	@Override
 	public String toString() {
-		return "Prodotto [id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", quantita=" + quantita
-				+ ", descrizione=" + descrizione + ", prezzo=" + prezzo + "]";
+		return "Prodotto [id=" + id + ", quantita=" + quantita + ", nome=" + nome + ", categoria=" + categoria
+				+ ", descrizione=" + descrizione + ", foto=" + foto + ", prezzo=" + prezzo + "]";
 	}
+
+	
 	
 	
 	

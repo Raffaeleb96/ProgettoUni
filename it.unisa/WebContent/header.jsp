@@ -6,6 +6,9 @@
 	<meta charset="ISO-8859-1">
 	<title>Healthy4u</title>
 	
+	<%@page import="it.unisa.model.*"%>	
+	<jsp:useBean id="utente" class="it.unisa.model.Utente" scope="request"></jsp:useBean>
+	
 		<!-- js  -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -102,38 +105,60 @@
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			
 			<nav class="navbar navbar-light ">
- 			 <a class="navbar-brand zoom" href="index.jsp">
+ 			 <a class="navbar-brand zoom nav-link p-2" href="index.jsp">
   			  <img src="imgs/mask.svg" width="50px" height="50px" alt="logo" >
+  			  
+  			  <p style=float:right;> Healthy4u </p>
  			 </a>
 		</nav>	
 			
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle navbar-brand active zoom" href="#"
+						class="nav-link dropdown-toggle navbar-brand active zoom" href="prodotto"
 						id="navbarDropdownMenuLink" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> <b>Prodotti</b> </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item zoom" href="#">Mascherine</a></li>
-							<li><a class="dropdown-item zoom" href="#">Igienizzanti</a></li>
-						</ul></li>
-					<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="#">Guida
-							all`acquisto</a></li>
-					<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="#">Chi
-							siamo</a></li>	
+							<li><a class="dropdown-item zoom" href="prodotti">Tutti i prodotti</a></li>
+							<li><a class="dropdown-item zoom" href="mascherine">Mascherine</a></li>
+							<li><a class="dropdown-item zoom" href="disinfettanti">Disinfettanti</a></li>
+						</ul>
+					</li>
+		
+					
+					<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="assistenza.jsp">Assistenza</a></li>	
+							
+							<li class="nav-item">
+							 <div class="nav-link navbar-brand active zoom">
+							      <input type="search" id="search" placeholder="Cerca qui" />
+							      <span class="icon"><i class="fa fa-search"></i></span>
+							  </div>
+							
+							</li>	
+							
+							
 				</ul>
 				
 				
 				
 				
 				<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-					<li class="nav-item col-md-6 col-md-auto"><a class="nav-link p-2 zoom" 
-						href="login.jsp" target="_blank" rel="noopener">
-								  Il tuo account &nbsp
+				
+				<% if(utente.getNome()!=null) {%>
+				
+				<li class="nav-item col-md-4 col-md-auto"><a class="nav-link p-2 zoom" 
+						href="login.jsp" rel="noopener">
+				Ciao <%= utente.getNome() %>, Benvenuto! </a></li>
+				
+				<% }%>
+				
+					<li class="nav-item col-md-4 col-md-auto"><a class="nav-link p-2 zoom" 
+						href="login.jsp" rel="noopener">
+							Account
 						<i class="bi bi-person-square"style="font-size: 2rem;"
 							onclick="myFunction()"></i>
 							
 					</a></li>
-					<li class="nav-item col-md-6 col-md-auto"><a class="nav-link p-2 zoom"
+					<li class="nav-item col-md-4 col-md-auto"><a class="nav-link p-2 zoom"
 						href="https://twitter.com/getbootstrap" target="_blank"
 						rel="noopener"> Carrello <i class="bi bi-bag"
 							style="font-size: 2rem;" onclick="myFunxction()"></i>

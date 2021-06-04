@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.unisa.dao.ProdottoDAO;
 import it.unisa.dao.UtenteDAO;
+import it.unisa.model.Prodotto;
 import it.unisa.model.Utente;
 
 
@@ -17,19 +19,19 @@ import it.unisa.model.Utente;
 /**
  * Servlet implementation class UtenteSRVL
  */
-@WebServlet({"/utente","/login"})
-public class UtenteSRVL extends HttpServlet {
+@WebServlet({"/prodotti", "/mascherine","/disinfettanti"})
+public class ProdottoSRVL extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private UtenteDAO service;
+	private ProdottoDAO service;
 
 	/**
 	 * @throws ClassNotFoundException 
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public UtenteSRVL() throws ClassNotFoundException {
+	public ProdottoSRVL() throws ClassNotFoundException {
 		super();
-		service = new UtenteDAO();
+		service = new ProdottoDAO();
 	}
 
 	/**
@@ -44,62 +46,51 @@ public class UtenteSRVL extends HttpServlet {
 		String richiesta = request.getServletPath();
 
 		switch (richiesta) {
-		case "/utente":	recuperaUtenti(request, response);	break; 
-		case "/login":	recuperaAccount(request, response);	break; 
-
+		case "/prodotti":	recuperaProdotti(request, response);	break; 
+		case "/mascherine":	recuperaMascherine(request, response);	break; 
+		case "/disinfettanti":recuperaDisinfettanti(request, response);	break;
+		
+		
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + richiesta);
 		}
 
 	}
 
-	
-	
-	//METODO CHE PERMETTE DI CONTROLLARE IL LOGIN DELL'UTENTE
-	private void recuperaAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		System.out.println(email + password);
-		
-		
-		Utente account = service.recuperaUno(email);
-	
-		System.out.println(account);
-		
-		//TODO FARE TUTTI I CONTROLLI
-		
-		
-			if(password.equals(account.getPassword())) {
-			request.setAttribute("utente",account); 
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-			}
-			else
-				
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+	private void recuperaDisinfettanti(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 
 			
-		
-			
-		
-//		else
-//			request.getRequestDispatcher("errore.jsp").forward(request, response);
+			List<Prodotto> lista = service.recuperaTutti("disinfettanti");
 
+			request.setAttribute("elenco", lista);
+
+			request.getRequestDispatcher("prodotti.jsp").forward(request, response);
+			
 		
 	}
 
-	
-	
-	
-	//METODO CHE VISUALIZZA TUTTI GLI UTENTI, RESTITUISCE UNA LISTA DI TIPO UTENTE
-	private void recuperaUtenti(HttpServletRequest request, HttpServletResponse response)
+	private void recuperaMascherine(HttpServletRequest request, HttpServletResponse response) 
+		throws ServletException, IOException {
+
+			
+			List<Prodotto> lista = service.recuperaTutti("mascherine");
+
+			request.setAttribute("elenco", lista);
+
+			request.getRequestDispatcher("prodotti.jsp").forward(request, response);
+			
+		
+	}
+
+	private void recuperaProdotti(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		List<Utente> lista = service.recuperaTutti();
+		List<Prodotto> lista = service.recuperaTutti();
 
 		request.setAttribute("elenco", lista);
 
-		request.getRequestDispatcher("utenti.jsp").forward(request, response);
+		request.getRequestDispatcher("prodotti.jsp").forward(request, response);
 		
 	}
 
