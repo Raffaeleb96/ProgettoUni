@@ -17,7 +17,7 @@ public class ConnessioneDB {
 	 * con i parametri permette di personalizzare i vari valori.
 	 */
 	
-	public static Connection getConnessione() {
+	public static Connection getConnessione() throws ClassNotFoundException {
 		
 		/*
 		 * connessione al database di cui si conoscono tutti valori di accesso
@@ -25,12 +25,13 @@ public class ConnessioneDB {
 		 * @return l'oggetto di Connessione utilizzando valori di default
 		 */
 		
+		String dbDriver = "com.mysql.cj.jdbc.Driver";
 		String server = "localhost";
 		int porta = 3306;
 		String nomeUtente = "root";
 		String password = "09090601";
 		
-		String nomeDB = "healthy4u";
+		String nomeDB = "unisa";
 		
 		//_______________________________________________________
 		
@@ -44,6 +45,7 @@ public class ConnessioneDB {
 		Connection connessione = null;
 		
 		try {
+			Class.forName(dbDriver);
 			connessione = DriverManager.getConnection(megaURL, nomeUtente, password);
 		} catch (SQLException e) {
 			
@@ -57,10 +59,11 @@ public class ConnessioneDB {
 	}
 	
 	
-	public Connection getConnessione(String server, int porta, String nomeUtente, String password, String nomeDB) {
+	public Connection getConnessione(String server, int porta, String nomeUtente, String password, String nomeDB) throws ClassNotFoundException {
 		
 					
-			
+			String dbDriver = "com.mysql.cj.jdbc.Driver";
+
 			String megaURL = "jdbc:mysql://" + server + ":" + porta + "/" + nomeDB;
 			
 			megaURL += "?serverTimeZone=UTC";
@@ -70,6 +73,9 @@ public class ConnessioneDB {
 			Connection connessione = null;
 			
 			try {
+				
+				Class.forName(dbDriver);
+
 				connessione = DriverManager.getConnection(megaURL, nomeUtente, password);
 			} catch (SQLException e) {
 				

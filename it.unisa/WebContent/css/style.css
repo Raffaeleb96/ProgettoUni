@@ -1,0 +1,168 @@
+/* importo font da google */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
+
+/*
+	dichiaro, tramite "variabili" i codici dei colori di mio 
+	interesse in modo che possano essere sempre utilizzabili 
+	facilmente e cambiati in pochi click.
+	
+	allo stesso modo potrei dichiarare altri valori, per es.
+	font utilizzati spesso o altro...
+	
+*/
+
+:root{
+	--coloreuno: #3A1488; 	/* blu */
+	--coloredue: #9ABF09; 	/* verde */
+	--coloretre: #EEEEEE; 	/* grigio */
+	--font: 'Krona One', sans-serif;
+}
+
+/* azzero tutte le spaziature e i bordi di default del documento */ 
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* 
+	definisco che le immagini occuperanno tutto lo spazio
+	relativo all'elemento che lo contiene
+*/
+
+/* ----------------------------------------------------------------------- */
+
+/*
+	le regole di stile sono contenute dentro le graffe
+	
+	regole nomenclatura:
+	
+		> 	senza delimitatori quando riferite ad elementi standard
+			del linguaggio (es. html, body, h1...)
+			
+		>	cominciano con . quando le associamo a più elementi nel
+			documento 
+			--> nell'html avrò class = "nome-regole-css"
+			
+		>	cominciano con # quando le associamo ad un unico elemento 
+			nel documento 
+			--> nell'html avrò id = "nome-regole-css" 
+*/
+
+body{ background: #f8f8f8; font-family: Arial; }
+
+h1, h2, h3, h4, h5, h6{ font-family: var(--font); }
+
+/* -------------------------------------------------------------------- */
+
+header{
+	background: #fff; /* ffffff */	
+	/* spaziatura interna: 20px alto e basso, 0 destra e sinistra */
+	padding: 20px 0; 
+}
+
+
+
+/* -------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------- */
+
+#menutop{
+	/* aggancio elementi a destra */
+	float: right;
+	margin-top: 30px;
+}
+
+	#menutop ul{
+		/* tolgo i pallini dell'elenco */
+		list-style: none;
+		float: left;
+	}
+	
+		#menutop ul li{
+			padding: 14px 15px; /* sopra-sotto destra-sinistra */
+			font-size: 25px;
+			float: left;
+		}
+
+			#menutop ul li a{
+				/* tolgo sottolineatura link */
+				text-decoration: none;
+				font-family: var(--font);
+				color: var(--coloreuno);
+			}
+
+				#menutop ul li a:hover{
+					color: var(--coloredue);
+				}
+
+/* ------------------------------------------------------------------- */
+
+.custompad{
+	padding-bottom:100px;
+	padding-left:100px;
+	padding-right:100px;
+}
+
+.imgcustom{
+	width:100%;
+}
+
+.center {
+	text-align:center;
+  margin: auto;
+  width: 100%;
+  padding: 5px;
+  
+}
+
+
+.navbar-fontcolor{
+	color:black;
+}
+
+.navbar-bgcolor{
+	background-color:#85D4B1;
+}
+
+.carousel-height{
+	height: 700px;
+}
+
+.textshow{
+	text-align: center;
+	margin-top: 30px;
+}
+
+
+.zoom {
+  transition: transform .2s; /* Animation */
+  
+}
+
+
+/* ------------------------------------------------------------------- */
+
+footer{
+	background: #1F0553;
+	color: #f9f9f9;
+	padding: 10px 0;
+}
+
+	footer p{
+		text-align: center;
+	}
+	
+		footer a{
+			color: #f9f9f9;
+			text-decoration: none;
+		}
+		
+			footer a:hover{
+				color: var(--coloredue);
+			}
+	
+/* ------------------------------------------------------------------- */
+

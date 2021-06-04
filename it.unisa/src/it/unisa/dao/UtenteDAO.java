@@ -15,7 +15,7 @@ public class UtenteDAO {
 	private Statement st;
 	private PreparedStatement ps;
 	
-	public UtenteDAO() {
+	public UtenteDAO() throws ClassNotFoundException {
 		
 		//recuperiamo la connessione al db
 		
@@ -53,11 +53,11 @@ public class UtenteDAO {
 	
 	
 	
-
-	public boolean inserisci(Utente s) {
+//TODO
+	public boolean inserisci(Utente s) throws ClassNotFoundException {
 		
 	//controllo he i valori non siano vuoti TODO	
-	String sql = "INSERT INTO Utente (nome,cognome) VALUES (?,?,?)";	
+	String sql = "INSERT INTO utente (nome,cognome) VALUES (?,?,?)";	
 	//mi dichiaro la variabile String con la query
 		
 	try {
@@ -88,13 +88,13 @@ public class UtenteDAO {
 	
 	
 	
-	
-	public boolean modifica(Utente s) {
+//	TODO
+	public boolean modifica(Utente s) throws ClassNotFoundException {
 		
 		//UPDATE tabella SET colonna = val, colonna = val;
 		
 		//mi dichiaro la stringa sql con la query
-		String sql = "UPDATE Utente SET nome = ?, cognome = ?, classe = ? WHERE id = ?";
+		String sql = "UPDATE utente SET nome = ?, cognome = ?, classe = ? WHERE id = ?";
 		
 		try {
 			
@@ -144,57 +144,62 @@ public class UtenteDAO {
 		
 	}
 	
-	public boolean cancellaTutti() {
-		
-		String sql = "DELETE FROM utente";
-		
-		
-		try {
-			
-			st.execute(sql);	
-			return true;
-			
-			
-		} catch (SQLException e) {
-			return false;
-		}
-
-		
-	}
-	
-//	public Utente recuperaUno(int id) {
+//	public boolean cancellaTutti() {
 //		
-//		//dichiaro stringa di query
-//		
-//		String sql = "SELECT * FROM Utente WHERE id="+id;
-//		Utente s = new Utente();
+//		String sql = "DELETE FROM utente";
 //		
 //		
-//		
-//		//recupero la riga dal database
-//
 //		try {
-//			ResultSet rs = st.executeQuery(sql);				//EXECUTE QUERY SI UTILIZZA PER PRELEVARE DA MYSQL
 //			
-//			 rs.next();			// chiamo next una sola volta perchè voglio un solo risultato	
-//			 					// posso anche chiamare un while su next, in base alla query dichiarata 
-//			 					// tornerà un solo risultato
-//			 
-//			 				s = new Utente(     
-//											id,
-//											rs.getString("nome"),	
-//											rs.getString("cognome") 
-//											);
+//			st.execute(sql);	
+//			return true;
+//			
 //			
 //		} catch (SQLException e) {
-//			e.printStackTrace();
+//			return false;
 //		}
-//		
-//		//ritorno l'oggetto di tipo Utente prelevato dal database tramite query
-//		
-//		return s;
 //
+//		
 //	}
+	
+	public Utente recuperaUno(int id) {
+		
+		//dichiaro stringa di query
+		
+		String sql = "SELECT * FROM utente WHERE id="+id;
+		Utente s = new Utente();
+		
+		
+		
+		//recupero la riga dal database
+
+		try {
+			ResultSet rs = st.executeQuery(sql);				//EXECUTE QUERY SI UTILIZZA PER PRELEVARE DA MYSQL
+			
+			 rs.next();			// chiamo next una sola volta perchè voglio un solo risultato	
+			 					// posso anche chiamare un while su next, in base alla query dichiarata 
+			 					// tornerà un solo risultato
+			 
+			 				s = new Utente( 
+									rs.getInt("id"),
+									rs.getString("nome"),
+									rs.getString("cognome"),
+									rs.getString("indirizzo"),
+									rs.getString("email"),
+									rs.getString("password"),
+									rs.getString("cellulare"),
+									rs.getString("tipo")
+											);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		//ritorno l'oggetto di tipo Utente prelevato dal database tramite query
+		
+		return s;
+
+	}
 	
 	
 	/*
@@ -232,47 +237,49 @@ public class UtenteDAO {
 	 * (la numerazione parte da 1)
 	 * 
 	 */
-//	public ArrayList<Utente> recuperaTutti() {
-//		
-//		//dichiaro la stringa query
-//		String sql ="SELECT * FROM Utente";
-//		ArrayList<Utente> elenco = new ArrayList<Utente>();
-//		
-//		//eseguo la query e salvo il risultato
-//		try {
-//			ResultSet rs = st.executeQuery(sql);
-//			
-//			
-//			//processo il risultato
-//			
-//			/*mentre ci sono righe
-//			 * ne estrapolo una alla volta (avviene in automatico)
-//			 * processo la singola riga
-//			 * salvo oggetto Utente nell'array
-//			 */
-//			
-//			while(rs.next()) {
-//				
-//				elenco.add(		new Utente( 
-//									rs.getInt("id"),
-//									rs.getString("nome"),
-//									rs.getString("cognome"),
-//									rs.getString("classe")
-//
-//									)
-//						);
-//				
-//			}
-//			
-//
-//		} catch (SQLException e) {
-//			// 
-//			e.printStackTrace();
-//		}
-//		
-//		
-//		return elenco;
-//	}
+	public ArrayList<Utente> recuperaTutti() {
+		
+		//dichiaro la stringa query
+		String sql ="SELECT * FROM utente";
+		ArrayList<Utente> elenco = new ArrayList<Utente>();
+		
+		//eseguo la query e salvo il risultato
+		try {
+			ResultSet rs = st.executeQuery(sql);
+			
+			
+			//processo il risultato
+			
+			/*mentre ci sono righe
+			 * ne estrapolo una alla volta (avviene in automatico)
+			 * processo la singola riga
+			 * salvo oggetto Utente nell'array
+			 */
+			
+			while(rs.next()) {
+				
+				elenco.add(		new Utente( 
+									rs.getInt("id"),
+									rs.getString("nome"),
+									rs.getString("cognome"),
+									rs.getString("indirizzo"),
+									rs.getString("email"),
+									rs.getString("password"),
+									rs.getString("cellulare"),
+									rs.getString("tipo")
+											)
+							);
+				
+							}
+			
+
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+		
+		
+		return elenco;
+	}
 
 	
 	
