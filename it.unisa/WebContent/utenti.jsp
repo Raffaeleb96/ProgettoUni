@@ -13,7 +13,7 @@
 	<div class="row">
 
 			
-			CIAO	<%= utente.getNome() %>, benvenuto!
+			CIAO<%= utente.getNome() %>, benvenuto!
 
 
 				<% for(Utente u : (ArrayList<Utente>)(Object) elenco) { %>		<!-- un arraylist che proviene da un object deve essere castato 

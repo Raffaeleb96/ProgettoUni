@@ -1,23 +1,25 @@
 package it.unisa.controller.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.unisa.dao.UtenteDAO;
+import it.unisa.model.Prodotto;
 import it.unisa.model.Utente;
-
-
 
 /**
  * Servlet implementation class UtenteSRVL
  */
-@WebServlet({"/utente","/login"})
+@WebServlet({"/utente","/login","/logout"})
 public class UtenteSRVL extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -46,6 +48,7 @@ public class UtenteSRVL extends HttpServlet {
 		switch (richiesta) {
 		case "/utente":	recuperaUtenti(request, response);	break; 
 		case "/login":	recuperaAccount(request, response);	break; 
+		case "/logout":	logout(request, response);	break; 
 
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + richiesta);
@@ -53,34 +56,46 @@ public class UtenteSRVL extends HttpServlet {
 
 	}
 
-	
-	
+
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		
+		session.invalidate();
+		
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+
+	}
+
 	//METODO CHE PERMETTE DI CONTROLLARE IL LOGIN DELL'UTENTE
 	private void recuperaAccount(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		System.out.println(email + password);
-		
+		System.out.println(email + "  "+ password);
 		
 		Utente account = service.recuperaUno(email);
 	
-		System.out.println(account);
 		
 		//TODO FARE TUTTI I CONTROLLI
 		
 		
-			if(password.equals(account.getPassword())) {
-			request.setAttribute("utente",account); 
+			if(password.equals(account.getPassword())) { 
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("user", account);
+			session.setAttribute("cart", new ArrayList<Prodotto>());
+			
+			session.setMaxInactiveInterval(300);
+			
+			
+			System.out.println(session.getAttribute("user"));
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 			}
 			else
 				
 				request.getRequestDispatcher("login.jsp").forward(request, response);
-
-			
 		
-			
 		
 //		else
 //			request.getRequestDispatcher("errore.jsp").forward(request, response);
@@ -88,8 +103,6 @@ public class UtenteSRVL extends HttpServlet {
 		
 	}
 
-	
-	
 	
 	//METODO CHE VISUALIZZA TUTTI GLI UTENTI, RESTITUISCE UNA LISTA DI TIPO UTENTE
 	private void recuperaUtenti(HttpServletRequest request, HttpServletResponse response)

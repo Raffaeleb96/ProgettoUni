@@ -1,5 +1,5 @@
 <!-- Footer -->
-	<footer class=" text-center text-white" style="background-color: #6397d0">
+	<footer class=" text-center text-white footercolor" >
 		<!-- Grid container -->
 		<div class="container p-4">
 		
@@ -27,41 +27,11 @@
 					role="button"><i class="bi bi-whatsapp"  style="font-size: 2rem;"></i></a>
 
 			</section>
-			<!-- Section: Social media -->
+			
 
 			<!-- Section: Form -->
 			<section class="">
-				<form action="">
-					<!--Grid row-->
-					<div class="row d-flex justify-content-center">
-						<!--Grid column-->
-						<div class="col-auto">
-							<p class="pt-2">
-								<strong>Iscriviti alla nostra newsletter</strong>
-							</p>
-						</div>
-						<!--Grid column-->
-
-						<!--Grid column-->
-						<div class="col-md-5 col-12">
-							<!-- Email input -->
-							<div class="form-outline form-white mb-4">
-								<input type="email" id="form5Example2" class="form-control" />
-
-							</div>
-						</div>
-						<!--Grid column-->
-
-						<!--Grid column-->
-						<div class="col-auto">
-							<!-- Submit button -->
-							<button type="submit" class="btn btn-outline-light mb-4">
-								Iscriviti</button>
-						</div>
-						<!--Grid column-->
-					</div>
-					<!--Grid row-->
-				</form>
+				
 			</section>
 			<!-- Section: Form -->
 

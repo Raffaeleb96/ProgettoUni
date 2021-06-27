@@ -1,8 +1,20 @@
 	<jsp:include page="header.jsp"></jsp:include>
+
+
+
+
 	
 	
+	<body onload="StartTimers();" onmousemove="ResetTimers();">
 	
 	
+<div id="timeout">
+    <h1>Session About To Timeout</h1>
+    <p>You will be automatically logged out in 1 minute.<br />
+    To remain logged in move your mouse over this window.
+</div>
+
+
 
 	<!-- CAROUSEL -->
 	
@@ -14,7 +26,7 @@
 		  </div>
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
-		      <img src="imgs/banner1.jpg" class="d-block w-100" alt="...">
+		      <img src="imgs/banner1.png" class="d-block w-100" alt="...">
 		      <div class="carousel-caption d-none d-md-block">
 		        <h5>First slide label</h5>
 		        <p>Some representative placeholder content for the first slide.</p>
@@ -38,6 +50,39 @@
 	</div>
 
 
+
+<script>
+
+//Set timeout variables.
+var timoutNow = 5000; // Timeout in 15 mins.
+var logoutUrl = 'login.jsp'; // URL to logout page.
+
+var timeoutTimer;
+
+// Start timers.
+function StartTimers() {
+   
+    timeoutTimer = setTimeout("IdleTimeout()", timoutNow);
+}
+
+// Reset timers.
+function ResetTimers() {
+    clearTimeout(timeoutTimer);
+    StartTimers();
+    $("#timeout").dialog('close');
+}
+
+// Show idle timeout warning dialog.
+
+// Logout the user.
+function IdleTimeout() {
+	  alert('Sessione scaduta, si prega di autenticarsi nuovamente.');
+    window.location = logoutUrl;
+}
+
+</script>
+
+
 	<div class="container">
 	
 		<div class="row">
@@ -46,7 +91,6 @@
 			
 			<a href="utente">utenti</a>
 			
-			<a href="prodotto">prodotti</a>	
 	
 			</div>
 		
@@ -57,6 +101,8 @@
 	
 	
 	
+	
+	</body>
 	
 	
 	<jsp:include page="footer.jsp"></jsp:include>

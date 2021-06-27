@@ -7,26 +7,11 @@
 	<title>Healthy4u</title>
 	
 	<%@page import="it.unisa.model.*"%>	
-	<jsp:useBean id="utente" class="it.unisa.model.Utente" scope="request"></jsp:useBean>
+	<jsp:useBean id="user" class="it.unisa.model.Utente" scope="session"></jsp:useBean>
 	
-		<!-- js  -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		function myFunction() {
-			alert("We BUCCHI!");
-		}
-	</script>
+	<jsp:useBean id="cart" class="java.util.ArrayList" scope="session"></jsp:useBean>
 	
+
 	<!-- js  -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -89,7 +74,7 @@
 
 	<!-- NAVBAR  -->
 	
-	<div class="row">
+	
 	
 	<nav
 		class="navbar navbar-inverse bg-inverse navbar-light navbar-expand-lg sticky-top navbar-bgcolor">
@@ -102,13 +87,13 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 					
-			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<div class="collapse navbar-collapse" id="navbarNavaDropdown">
 			
 			<nav class="navbar navbar-light ">
  			 <a class="navbar-brand zoom nav-link p-2" href="index.jsp">
   			  <img src="imgs/mask.svg" width="50px" height="50px" alt="logo" >
   			  
-  			  <p style=float:right;> Healthy4u </p>
+  			  <p> Healthy4u </p>
  			 </a>
 		</nav>	
 			
@@ -128,8 +113,8 @@
 					<li class="nav-item"><a class="nav-link navbar-brand active zoom" href="assistenza.jsp">Assistenza</a></li>	
 							
 							<li class="nav-item">
-							 <div class="nav-link navbar-brand active zoom">
-							      <input type="search" id="search" placeholder="Cerca qui" />
+							 <div class="nav-link navbar-brand active zoom inputwidth">
+							      <input type="search" placeholder="Cerca qui"/>
 							      <span class="icon"><i class="fa fa-search"></i></span>
 							  </div>
 							
@@ -143,30 +128,51 @@
 				
 				<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
 				
-				<% if(utente.getNome()!=null) {%>
 				
-				<li class="nav-item col-md-4 col-md-auto"><a class="nav-link p-2 zoom" 
-						href="login.jsp" rel="noopener">
-				Ciao <%= utente.getNome() %>, Benvenuto! </a></li>
+				
+				<% if(user.getNome()!=null) {%>
+				
+				<i class="bi bi-person-square" style="font-size: 3rem;"></i>
+				<li class="nav-item col-md-4 col-md-auto">
+					
+				<p class="nav-link p-2 zoom">
+				 <b>Ciao, <%= user.getNome() %>! <br>
+				 <p>
+				 <a href="areapersonale.jsp">Il tuo Account</a>
+				 <a href="logout">Esci</a></b>
+				 </p>
+				
+				 
+
+				</li>
+				
 				
 				<% }%>
 				
-					<li class="nav-item col-md-4 col-md-auto"><a class="nav-link p-2 zoom" 
-						href="login.jsp" rel="noopener">
-							Account
-						<i class="bi bi-person-square"style="font-size: 2rem;"
-							onclick="myFunction()"></i>
-							
-					</a></li>
-					<li class="nav-item col-md-4 col-md-auto"><a class="nav-link p-2 zoom"
-						href="https://twitter.com/getbootstrap" target="_blank"
-						rel="noopener"> Carrello <i class="bi bi-bag"
-							style="font-size: 2rem;" onclick="myFunxction()"></i>
-					</a></li>
+				
+				<% if(user.getNome()==null) {%>
+				
+					<i class="bi bi-person-square" style="font-size: 3rem;"></i>
+					<li class="nav-item col-md-4 col-md-auto">
+					<p class="nav-link p-2 zoom">
+							 <b>Account<br>
+						 	<span><a href="login.jsp">Accedi</a></span> 
+							<span><a href="registrazione.jsp">Registrati</a></b></span> 
+					
+					</li>
+					
+					<% }%>
+					
+					 <i class="bi bi-bag" style="font-size: 3rem;"></i>
+					<li class="nav-item col-md-4 col-md-auto">
+					<a class="nav-link p-2 zoom" href="cart">
+						 <b>	Il tuo <br>carrello <% out.print(cart.size());  %></b> 
+					</a>
+					</li>
 				</ul>
 				
 				</div>
 			</div>
 		</nav>
 		
-	</div>
+	

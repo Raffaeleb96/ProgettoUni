@@ -1,8 +1,5 @@
 /* importo font da google */
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
-
-/*
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');/*
 	dichiaro, tramite "variabili" i codici dei colori di mio 
 	interesse in modo che possano essere sempre utilizzabili 
 	facilmente e cambiati in pochi click.
@@ -16,7 +13,7 @@
 	--coloreuno: #3A1488; 	/* blu */
 	--coloredue: #9ABF09; 	/* verde */
 	--coloretre: #EEEEEE; 	/* grigio */
-	--font: 'Indie Flower', sans-serif;
+	--font: 'Zilla Slab', serif;
 }
 
 /* azzero tutte le spaziature e i bordi di default del documento */ 
@@ -52,17 +49,18 @@
 			--> nell'html avrò id = "nome-regole-css" 
 */
 
-body{ background: #f8f8f8; font-family: Arial; }
+body{ background: #f8f8f8; font-family: var(--font); }
 
 h1, h2, h3, h4, h5, h6{ font-family: var(--font); }
 
+p
+
+	{
+	font-family: var(--font);
+	}
+
 /* -------------------------------------------------------------------- */
 
-header{
-	background: #fff; /* ffffff */	
-	/* spaziatura interna: 20px alto e basso, 0 destra e sinistra */
-	padding: 20px 0; 
-}
 
 
 
@@ -114,19 +112,21 @@ header{
 
 .center {
 	text-align:center;
-  margin: auto;
-  width: 100%;
-  padding: 5px;
+  	margin: auto;
+  	width: 100%;
+  	padding: 5px;
   
 }
-
 
 .navbar-fontcolor{
 	color:black;
 }
 
 .navbar-bgcolor{
-	background-color:#85D4B1;
+	background: #FF5F6D;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .carousel-height{
@@ -147,10 +147,12 @@ header{
 
 /* ------------------------------------------------------------------- */
 
-footer{
-	background: #1F0553;
-	color: #f9f9f9;
-	padding: 10px 0;
+.footercolor{
+	
+	background: #003973;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 	footer p{
@@ -170,7 +172,7 @@ footer{
 
 /* altezza del carousel nella index */
 .w-100 {
-    height: 500px;
+    height: 50em;
 }
 
 /* ------------------------------------------------------------------- */
@@ -180,4 +182,57 @@ footer{
 	height:200px;
 	width:200px;	
 }
+
+.margin{
+	margin:20px;
+}
+
+.whitecolor{
+	background-color: white;
+	padding:10px;
+	
+}
+
+.inputwidth{
+	width:300px;
+	border: 2px solid;
+	border-radius: 5px;
+}
+
+#loginheight{	
+	height:550px;
+}
+
+.heightmax{
+	height:100%
+}
+
+.myprofilelist{
+	margin-top:10em;
+}
+
+.myprofilelist li{
+	margin-top:10px;
+	font-size:20px;
+	text-decoration:none;	
+}
+
+.myprofilelist li a{
+	text-decoration:none;
+	color: black;	
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.conten {
+  height: 200px;
+  position: relative;
+}
+
 

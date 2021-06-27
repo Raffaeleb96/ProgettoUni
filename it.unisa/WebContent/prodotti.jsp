@@ -16,9 +16,10 @@
 
 				<% for(Prodotto p : (ArrayList<Prodotto>)(Object) elenco) { %>		<!-- un arraylist che proviene da un object deve essere castato 
 																						due volte per essere riconosciuto  -->
+						
 					
 						<div class="col-lg-3">
-						
+								
 						
 							<div class="row">
 								<div class="col-md center">
@@ -33,9 +34,22 @@
 										 
 										 <p> Prezzo: <%=(Double) p.getPrezzo()%>&euro; </p>
 										 
-										 
-										 <p> <a href="#">Aggiungi al carrello</a> </p>
-									
+										 <form action="aggiungicarrello" method="post">
+											 <input type="hidden" name="id" id="id" value="<%=p.getId()%>" >
+											 
+											 				<!-- TODO da modificare -->
+																<script>
+																
+																function func() {
+																	alert('Prodotto aggiunto al carrello!');
+																	
+																}
+																
+																</script>
+											 
+											 <input type="submit" value="aggiungi al carrello" onclick="func()"> 
+		
+										</form>
 								</div>
 							</div>
 					

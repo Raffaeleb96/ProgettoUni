@@ -1,22 +1,19 @@
-
-
 <jsp:include page="header.jsp" />
 
-<%@page import="it.unisa.model.*"%>
-<jsp:useBean id="utente" class="it.unisa.model.Utente" scope="request"></jsp:useBean>
+
 
 	<div class="center">
-		<div class="wrapper fadeInDown">
+		<div class="container whitecolor" id="loginheight">
   	  		<div id="formContent">
 			  	    <!-- Tabs Titles -->
 			
 			  	    <!-- Icon -->
 			  	    <div>
-			  	      <h1 class="my-5">Benvenuto</h1>
+			  	      <h1 class="margin">Benvenuto</h1>
 			  	    </div>
 			  	    
 			  	    <div>
-			  	      <h4 class="my-5">Accedi</h4>
+			  	      <h5>Accedi</h5>
 			  	    </div>
 			  	    
 			  	    	<%-- <% if(utente.getEmail().isEmpty())  %>
@@ -30,22 +27,27 @@
 			  	    <!-- Login Form -->
 			  	    <form action="login" method="POST">
 			  	    
-			  	      <input type="email" id="email" class="fadeIn second zero-raduis" name="email" placeholder="E-Mail" required="required">
-			  	      <input type="password" id="password" class="fadeIn third zero-raduis" name="password" placeholder="Password" required="required">
+			  	    <div>
+			  	      <input type="email" id="email" class="margin inputwidth" name="email" placeholder="Inserisci la tua e-Mail" required="required">
+			  	     </div>
+			  	      <input type="password" id="password" class="margin inputwidth" name="password" placeholder="Inserisci la tua password" required="required">
+			   </div>
+			  	      
+			  	      
+					      <div>
 			  	      	
-			  	      
-			  	      
-					      <div id="formFooter">
-			  	      	<a class="underlineHover" href="#">Password dimenticata?</a>
 			  	      </div>
-			  	      <input type="submit" class="fadeIn fourth" value="login">
+			  	      <input type="submit" class="margin inputwidth" value="Accedi">
 			  	      
 			  	      
   	      
   	      
-  	      <div><a href="register.jsp"><h2>Non hai un account?</h2></a></div>
-  	      
-  	    </form>
+  	    				  <div>
+  	    				  <h4>Non hai un account? <span><a href="registrazione.jsp"> Registrati </a></span></h4>
+  	    				  <h4><a class="underlineHover" href="#">Password dimenticata?</a></h4>
+  	    				  </div>
+  	   		   
+  	 				   </form>
   	    
   	    
   	    
@@ -53,6 +55,6 @@
 		  	  </div>
 		  </div>
 		  
-  </div>
+  
   
 <jsp:include page="footer.jsp" />
