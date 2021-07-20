@@ -22,27 +22,29 @@
 								
 						
 							<div class="row">
+							<a href="schedaprodotto?id=<%=p.getId()%>&categoria=<%=p.getCategoria()%>" style="text-decoration: none; color:black;">
 								<div class="col-md center">
 								
 									<div><h3><%=p.getNome()%></h3></div>
 									
 									<div class="center"> <img class="imgsize" src="imgs/<%=p.getFoto()%>" alt="non disponibile" >  </div>
 									
-									<div class="center"> Descrizione: </div>
-									
-										 <o><%=p.getDescrizione()%></p>
 										 
 										 <p> Prezzo: <%=(Double) p.getPrezzo()%>&euro; </p>
 										 
 										 <form action="aggiungicarrello" method="post">
-											 <input type="hidden" name="id" id="id" value="<%=p.getId()%>" >
+										 
+										 
+											 <input type="hidden" name="id" id="id" value="<%=p.getId()%>">
+											 <input type="hidden" name="categoria" id="categoria" value="<%=p.getCategoria()%>">
+											 
+											
 											 
 											 				<!-- TODO da modificare -->
 																<script>
 																
 																function func() {
 																	alert('Prodotto aggiunto al carrello!');
-																	
 																}
 																
 																</script>
@@ -50,8 +52,11 @@
 											 <input type="submit" value="aggiungi al carrello" onclick="func()"> 
 		
 										</form>
-								</div>
+									</div>
+								</a>
 							</div>
+							
+							
 					
 							
 						

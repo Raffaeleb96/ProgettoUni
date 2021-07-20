@@ -1,4 +1,4 @@
-<jsp:include page="header.jsp" />
+	<jsp:include page="header.jsp"></jsp:include>
 
 
 
@@ -28,9 +28,9 @@
 			  	    <form action="login" method="POST">
 			  	    
 			  	    <div>
-			  	      <input type="email" id="email" class="margin inputwidth" name="email" placeholder="Inserisci la tua e-Mail" required="required">
+			  	      <input type="email" id="email" class="margin inputwidth" name="email" placeholder="mapi@gmail.com" required="required">
 			  	     </div>
-			  	      <input type="password" id="password" class="margin inputwidth" name="password" placeholder="Inserisci la tua password" required="required">
+			  	      <input type="password" id="password" class="margin inputwidth" name="password" placeholder="1234" required="required">
 			   </div>
 			  	      
 			  	      

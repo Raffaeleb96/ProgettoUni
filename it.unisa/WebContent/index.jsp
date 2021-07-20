@@ -2,20 +2,6 @@
 
 
 
-
-	
-	
-	<body onload="StartTimers();" onmousemove="ResetTimers();">
-	
-	
-<div id="timeout">
-    <h1>Session About To Timeout</h1>
-    <p>You will be automatically logged out in 1 minute.<br />
-    To remain logged in move your mouse over this window.
-</div>
-
-
-
 	<!-- CAROUSEL -->
 	
 	<div id="carouselExampleCaptions customcarousel" class="carousel slide" data-bs-ride="carousel">
@@ -50,37 +36,6 @@
 	</div>
 
 
-
-<script>
-
-//Set timeout variables.
-var timoutNow = 5000; // Timeout in 15 mins.
-var logoutUrl = 'login.jsp'; // URL to logout page.
-
-var timeoutTimer;
-
-// Start timers.
-function StartTimers() {
-   
-    timeoutTimer = setTimeout("IdleTimeout()", timoutNow);
-}
-
-// Reset timers.
-function ResetTimers() {
-    clearTimeout(timeoutTimer);
-    StartTimers();
-    $("#timeout").dialog('close');
-}
-
-// Show idle timeout warning dialog.
-
-// Logout the user.
-function IdleTimeout() {
-	  alert('Sessione scaduta, si prega di autenticarsi nuovamente.');
-    window.location = logoutUrl;
-}
-
-</script>
 
 
 	<div class="container">

@@ -22,7 +22,7 @@ import it.unisa.model.Prodotto;
 /**
  * Servlet implementation class UtenteSRVL
  */
-@WebServlet({"/prodotti", "/mascherine","/disinfettanti", "/aggiungicarrello","/cart"})
+@WebServlet({"/prodotti", "/mascherine","/disinfettanti", "/aggiungicarrello","/cart","/deleteitem","/schedaprodotto"})
 public class ProdottoSRVL extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -54,9 +54,9 @@ public class ProdottoSRVL extends HttpServlet {
 		case "/disinfettanti":recuperaDisinfettanti(request, response);	break;
 		case "/aggiungicarrello":aggiungiCarrello(request, response);	break;
 		case "/cart": mostraCarrello(request, response);	break;
+		case "/deleteitem": eliminaProdotto(request, response);	break;
+		case "/schedaprodotto": visualizzaProdotto(request, response);	break;
 
-		
-		
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + richiesta);
 		}
@@ -64,6 +64,51 @@ public class ProdottoSRVL extends HttpServlet {
 	}
 	
 	
+
+	private void visualizzaProdotto(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		int index = Integer.parseInt(request.getParameter("id"));
+		
+		String categoria = request.getParameter("categoria");
+		
+		Prodotto p = recuperaProdotto(index, categoria);
+		
+		//	HttpSession session = request.getSession();
+		
+		request.setAttribute("prodotto", p);
+		
+		request.getRequestDispatcher("schedaprodotto.jsp").forward(request, response);
+		
+		
+		
+		
+	}
+
+	private void eliminaProdotto(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		HttpSession session = request.getSession();
+		
+		int index = Integer.parseInt(request.getParameter("id"));
+		
+		ArrayList<Prodotto> cart =  (ArrayList<Prodotto>) session.getAttribute("cart");
+		
+		
+		
+		if(cart.size() == 1) 
+			cart.clear();
+	
+		else 
+			cart.remove(index);
+		
+		
+	
+		session.setAttribute("cart", cart);
+		
+		response.sendRedirect("cart");
+
+	}
 
 	private void mostraCarrello(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -79,13 +124,17 @@ public class ProdottoSRVL extends HttpServlet {
 
 	private void aggiungiCarrello(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
+		
 		//TEST PER 1 SOLO PRODOTTO
 		
 		//recupero l'indice dal prodotto scelto
 		int index = Integer.parseInt(request.getParameter("id"));
+		String category = request.getParameter("categoria");
 		
 		//recupero il prodotto completo dalla lista dei prodotti
-		Prodotto recuperato = recuperaProdotto(index);
+		Prodotto recuperato = recuperaProdotto(index,category);
+		
+	
 		
 		//recupero la sessione
 		HttpSession session = request.getSession();
@@ -93,15 +142,23 @@ public class ProdottoSRVL extends HttpServlet {
 		//recupero il carrello
 		ArrayList<Prodotto> cart =  (ArrayList<Prodotto>) session.getAttribute("cart");
 		
+		recuperato.setId(cart.size()+1);
+		
 		//aggiungo il prodotto al carrello
 		cart.add(recuperato);
+		
+		
+		for(Prodotto p : cart) {
+		System.out.println(p.toString());
+		}
 		
 		//ri-setto il carrello perchè ho aggiunto un elemento alla sessione
 		session.setAttribute("cart", cart);
 		
+		
 		//salvo l'elemento recuperato per mostrare l'avvenuta registrazione nel carrello
-		request.setAttribute("prodottoaggiunto",recuperato);
-		System.out.println(recuperato);
+		//request.setAttribute("prodottoaggiunto",recuperato);
+		
 		
 		
 		response.sendRedirect("cart");
@@ -110,16 +167,13 @@ public class ProdottoSRVL extends HttpServlet {
 		
 	}
 
-	private Prodotto recuperaProdotto(int id) {
+	private Prodotto recuperaProdotto(int id, String categoria) {
 		
-		//Recupero tutti i prodotti
-		ArrayList<Prodotto> lista = service.recuperaTutti();
+		Prodotto temp = service.recuperaUno(id, categoria);
 		
-		//prelevo quello che l'utente ha scelto
-		Prodotto recuperato = lista.get(id);
 		
-		//ritorno il prodotto scelto 
-		return recuperato;
+		return temp;
+		
 	}
 	
 	

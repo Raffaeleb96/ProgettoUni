@@ -81,12 +81,14 @@ public class UtenteSRVL extends HttpServlet {
 		
 		
 			if(password.equals(account.getPassword())) { 
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(true);
 			
 			session.setAttribute("user", account);
 			session.setAttribute("cart", new ArrayList<Prodotto>());
 			
-			session.setMaxInactiveInterval(300);
+			
+			//setta il tempo della sessione, da modificare
+			session.setMaxInactiveInterval(500);
 			
 			
 			System.out.println(session.getAttribute("user"));

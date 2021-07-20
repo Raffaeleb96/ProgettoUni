@@ -7,6 +7,8 @@
 	<title>Healthy4u</title>
 	
 	<%@page import="it.unisa.model.*"%>	
+	<%@page import="java.util.ArrayList"%>	
+	
 	<jsp:useBean id="user" class="it.unisa.model.Utente" scope="session"></jsp:useBean>
 	
 	<jsp:useBean id="cart" class="java.util.ArrayList" scope="session"></jsp:useBean>
@@ -65,6 +67,9 @@
 		<!-- E' IMPORTANTE CHE SIA L'ULTIMO IL NOSTRO CSS
 		L'ULTIMO BATTE TUTTI I PRECEDENTI -->
 	<link href="css/style.css" rel="stylesheet" type="text/css">
+	
+	
+	
 		
 	
 	</head>
@@ -103,7 +108,7 @@
 						id="navbarDropdownMenuLink" role="button"
 						data-bs-toggle="dropdown" aria-expanded="false"> <b>Prodotti</b> </a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item zoom" href="prodotti">Tutti i prodotti</a></li>
+							<li><a class="dropdown-item zoom" href="prodotti">Panoramica</a></li>
 							<li><a class="dropdown-item zoom" href="mascherine">Mascherine</a></li>
 							<li><a class="dropdown-item zoom" href="disinfettanti">Disinfettanti</a></li>
 						</ul>
@@ -166,7 +171,7 @@
 					 <i class="bi bi-bag" style="font-size: 3rem;"></i>
 					<li class="nav-item col-md-4 col-md-auto">
 					<a class="nav-link p-2 zoom" href="cart">
-						 <b>	Il tuo <br>carrello <% out.print(cart.size());  %></b> 
+						 <b>	Il tuo <br>carrello (<% out.print(cart.size());%>)</b> 
 					</a>
 					</li>
 				</ul>

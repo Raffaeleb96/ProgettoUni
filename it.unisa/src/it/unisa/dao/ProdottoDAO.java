@@ -237,6 +237,49 @@ public class ProdottoDAO {
 	 * (la numerazione parte da 1)
 	 * 
 	 */
+	
+	
+//	recupero un solo elemento sapendo l'id e la categoria
+	
+public Prodotto recuperaUno(int id, String categoria) {
+		
+		
+		
+		String sql = "SELECT * FROM prodotto WHERE id='"+id+"' && categoria='"+categoria+"'";
+		Prodotto s = new Prodotto();
+		
+		
+
+
+		try {
+			ResultSet rs = st.executeQuery(sql);				//EXECUTE QUERY SI UTILIZZA PER PRELEVARE DA MYSQL
+			
+			 rs.next();			
+			 
+			 				s = new Prodotto( 
+									rs.getInt("id"),
+									rs.getString("nome"),
+									rs.getString("categoria"),
+									rs.getInt("quantita"),
+									rs.getString("descrizione"),
+									rs.getDouble("prezzo"),
+									rs.getString("foto")
+									
+											);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			e.getMessage();
+		}
+		
+		
+		
+		return s;
+
+	}
+	
+	
+	
 	public ArrayList<Prodotto> recuperaTutti() {
 		
 		//dichiaro la stringa query
